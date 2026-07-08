@@ -142,7 +142,7 @@ export default function Projects() {
   const [error,    setError]    = useState(null);
 
   useEffect(() => {
-    fetch('/api/projects')
+    fetch('https://waqas-theta.vercel.app/api/projects')
       .then((r) => { if (!r.ok) throw new Error('Failed to fetch'); return r.json(); })
       .then((d) => { setProjects(d); setLoading(false); })
       .catch((e) => { setError(e.message); setLoading(false); });
