@@ -61,45 +61,40 @@ const DETAILS = [
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-zinc-900 py-28 text-white overflow-hidden">
-      {/* Soft top vignette */}
+    <section id="about" className="relative bg-zinc-900 py-16 md:py-24 lg:py-28 text-white overflow-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-zinc-800" />
-      <div className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-950/30 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-emerald-950/30 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* Section header */}
-        <div className="mb-16">
-          <span className="chip mb-4">About Me</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mt-3">
+        {/* Header */}
+        <div className="mb-10 md:mb-16">
+          <span className="chip mb-3 md:mb-4">About Me</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-3">
             The person behind
             <span className="text-gradient-emerald"> the code</span>
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-14 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-14 items-start">
 
           {/* ── Left: Bio ── */}
           <div>
             {/* Identity card */}
-            <div className="flex items-center gap-4 mb-8 glass-emerald rounded-2xl p-5">
+            <div className="flex items-center gap-3 sm:gap-4 mb-6 md:mb-8 glass-emerald rounded-2xl p-4 sm:p-5">
               <div className="relative shrink-0">
-                <div className="w-14 h-14 rounded-xl overflow-hidden border border-emerald-500/30 shadow-lg shadow-emerald-900/40">
-                  <img
-                    src={waqasPhoto}
-                    alt="Waqas Ahmad"
-                    className="w-full h-full object-cover object-top"
-                  />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden border border-emerald-500/30 shadow-lg shadow-emerald-900/40">
+                  <img src={waqasPhoto} alt="Waqas Ahmad" className="w-full h-full object-cover object-top" />
                 </div>
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-zinc-900 status-pulse" />
+                <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-emerald-400 rounded-full border-2 border-zinc-900 status-pulse" />
               </div>
               <div>
-                <p className="font-bold text-white">Waqas Ahmad</p>
-                <p className="text-sm text-emerald-400">CS Student · Available for work</p>
+                <p className="font-bold text-white text-sm sm:text-base">Waqas Ahmad</p>
+                <p className="text-xs sm:text-sm text-emerald-400">CS Student · Available for work</p>
               </div>
             </div>
 
-            <div className="space-y-4 text-zinc-400 leading-relaxed text-[15px] mb-8">
+            <div className="space-y-3 md:space-y-4 text-zinc-400 leading-relaxed text-sm md:text-[15px] mb-6 md:mb-8">
               <p>
                 I'm a <span className="text-zinc-100 font-semibold">Computer Science student</span> who
                 genuinely loves engineering software that solves real-world problems. Clean architecture
@@ -118,13 +113,13 @@ export default function About() {
             </div>
 
             {/* Trait grid */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
               {TRAITS.map(({ icon, label, sub }) => (
-                <div key={label} className="skill-card glass rounded-xl p-4 border border-zinc-800 flex items-start gap-3">
-                  <span className="text-xl mt-0.5">{icon}</span>
+                <div key={label} className="skill-card glass rounded-xl p-3 sm:p-4 border border-zinc-800 flex items-start gap-2 sm:gap-3">
+                  <span className="text-lg sm:text-xl mt-0.5">{icon}</span>
                   <div>
-                    <p className="text-sm font-semibold text-zinc-200">{label}</p>
-                    <p className="text-xs text-zinc-500 mt-0.5">{sub}</p>
+                    <p className="text-xs sm:text-sm font-semibold text-zinc-200">{label}</p>
+                    <p className="text-[10px] sm:text-xs text-zinc-500 mt-0.5">{sub}</p>
                   </div>
                 </div>
               ))}
@@ -132,13 +127,13 @@ export default function About() {
           </div>
 
           {/* ── Right: Details ── */}
-          <div className="space-y-2">
+          <div className="space-y-2 mt-2 lg:mt-0">
             {DETAILS.map(({ label, value, href, icon }) => (
               <div
                 key={label}
-                className="group glass rounded-xl px-5 py-4 border border-zinc-800 flex items-center gap-4 hover:border-emerald-500/30 transition-all duration-300 hover:-translate-y-px"
+                className="group glass rounded-xl px-4 sm:px-5 py-3 sm:py-4 border border-zinc-800 flex items-center gap-3 sm:gap-4 hover:border-emerald-500/30 transition-all duration-300"
               >
-                <div className="w-9 h-9 rounded-lg bg-zinc-800 border border-zinc-700 group-hover:border-emerald-500/30 group-hover:bg-emerald-950/40 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 shrink-0 transition-all duration-300">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-zinc-800 border border-zinc-700 group-hover:border-emerald-500/30 group-hover:bg-emerald-950/40 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 shrink-0 transition-all duration-300">
                   {icon}
                 </div>
                 <div className="min-w-0 flex-1">
@@ -148,12 +143,12 @@ export default function About() {
                       href={href}
                       target={href.startsWith('http') ? '_blank' : undefined}
                       rel="noreferrer"
-                      className="text-sm text-zinc-300 hover:text-emerald-400 transition-colors truncate block"
+                      className="text-xs sm:text-sm text-zinc-300 hover:text-emerald-400 transition-colors truncate block"
                     >
                       {value}
                     </a>
                   ) : (
-                    <p className="text-sm text-zinc-300 truncate">{value}</p>
+                    <p className="text-xs sm:text-sm text-zinc-300 truncate">{value}</p>
                   )}
                 </div>
                 {href && (

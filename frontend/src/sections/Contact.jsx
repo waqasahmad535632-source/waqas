@@ -63,45 +63,45 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative bg-zinc-950 py-28 text-white overflow-hidden line-grid">
+    <section id="contact" className="relative bg-zinc-950 py-16 md:py-24 lg:py-28 text-white overflow-hidden line-grid">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-zinc-900/50 via-transparent to-transparent" />
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-emerald-950/15 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[800px] h-[200px] sm:h-[300px] bg-emerald-950/15 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <div className="mb-16">
-          <span className="chip mb-4">Contact</span>
-          <h2 className="text-4xl md:text-5xl font-black mt-3">
+        <div className="mb-10 md:mb-16">
+          <span className="chip mb-3 md:mb-4">Contact</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-3">
             Let's build
             <span className="text-gradient-emerald"> something together</span>
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 md:gap-12 items-start">
 
-          {/* ── Left ── */}
+          {/* ── Left: info ── */}
           <div>
-            <p className="text-zinc-400 text-[15px] leading-relaxed mb-10 max-w-md">
+            <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed mb-8 max-w-md">
               Whether it's a project collab, an internship opportunity, or just a chat about tech —
               I read every message and respond within 24 hours.
             </p>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {CHANNELS.map(({ label, value, href, icon }) => (
                 <a
                   key={href}
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel="noreferrer"
-                  className="group flex items-center gap-4 glass rounded-xl px-5 py-4 border border-zinc-800 hover:border-emerald-500/30 transition-all duration-300 hover:-translate-y-0.5"
+                  className="group flex items-center gap-3 sm:gap-4 glass rounded-xl px-4 sm:px-5 py-3 sm:py-4 border border-zinc-800 hover:border-emerald-500/30 transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 group-hover:bg-emerald-950/40 group-hover:border-emerald-500/30 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 shrink-0 transition-all duration-300">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-zinc-800 border border-zinc-700 group-hover:bg-emerald-950/40 group-hover:border-emerald-500/30 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 shrink-0 transition-all duration-300">
                     {icon}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">{label}</p>
-                    <p className="text-sm text-zinc-300 group-hover:text-white transition-colors mt-0.5">{value}</p>
+                    <p className="text-xs sm:text-sm text-zinc-300 group-hover:text-white transition-colors mt-0.5 truncate">{value}</p>
                   </div>
                   <svg className="w-3.5 h-3.5 text-zinc-700 group-hover:text-emerald-500 ml-auto shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -110,10 +110,10 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Availability note */}
-            <div className="mt-8 glass-emerald rounded-xl px-5 py-4 flex items-center gap-3">
+            {/* Availability pill */}
+            <div className="mt-6 sm:mt-8 glass-emerald rounded-xl px-4 sm:px-5 py-3 sm:py-4 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-emerald-400 status-pulse shrink-0" />
-              <p className="text-sm text-zinc-400">
+              <p className="text-xs sm:text-sm text-zinc-400">
                 Currently <span className="text-emerald-400 font-semibold">available</span> for internships & freelance projects.
               </p>
             </div>
@@ -122,50 +122,40 @@ export default function Contact() {
           {/* ── Right: Form ── */}
           <form
             onSubmit={onSubmit}
-            className="glass rounded-2xl p-8 border border-zinc-800 hover:border-zinc-700 transition-colors duration-300 space-y-5"
+            className="glass rounded-2xl p-5 sm:p-8 border border-zinc-800 space-y-4 sm:space-y-5"
           >
-            <p className="text-base font-bold text-white mb-2">Send a message</p>
+            <p className="text-sm sm:text-base font-bold text-white mb-1">Send a message</p>
 
-            {/* Name */}
             <div>
-              <label htmlFor="cf-name" className="block text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">
-                Full Name
-              </label>
+              <label htmlFor="cf-name" className="block text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-1.5 sm:mb-2">Full Name</label>
               <input
                 id="cf-name" name="name" type="text" required
                 value={form.name} onChange={onChange}
                 placeholder="John Doe"
-                className="input-glow w-full bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-3 text-sm placeholder-zinc-700 transition-all duration-200"
+                className="input-glow w-full bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 sm:py-3 text-sm placeholder-zinc-700 transition-all duration-200"
               />
             </div>
 
-            {/* Email */}
             <div>
-              <label htmlFor="cf-email" className="block text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">
-                Email Address
-              </label>
+              <label htmlFor="cf-email" className="block text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-1.5 sm:mb-2">Email Address</label>
               <input
                 id="cf-email" name="email" type="email" required
                 value={form.email} onChange={onChange}
                 placeholder="john@example.com"
-                className="input-glow w-full bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-3 text-sm placeholder-zinc-700 transition-all duration-200"
+                className="input-glow w-full bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 sm:py-3 text-sm placeholder-zinc-700 transition-all duration-200"
               />
             </div>
 
-            {/* Message */}
             <div>
-              <label htmlFor="cf-msg" className="block text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">
-                Message
-              </label>
+              <label htmlFor="cf-msg" className="block text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-1.5 sm:mb-2">Message</label>
               <textarea
-                id="cf-msg" name="message" rows={5} required
+                id="cf-msg" name="message" rows={4} required
                 value={form.message} onChange={onChange}
                 placeholder="Hi Waqas, I'd like to discuss..."
-                className="input-glow w-full bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-3 text-sm placeholder-zinc-700 transition-all duration-200 resize-none"
+                className="input-glow w-full bg-zinc-900 border border-zinc-800 text-white rounded-xl px-4 py-2.5 sm:py-3 text-sm placeholder-zinc-700 transition-all duration-200 resize-none"
               />
             </div>
 
-            {/* Status messages */}
             {status === 'success' && (
               <div className="flex items-center gap-2.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium rounded-xl px-4 py-3">
                 <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,11 +173,10 @@ export default function Contact() {
               </div>
             )}
 
-            {/* Submit */}
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="btn-shine w-full flex items-center justify-center gap-2.5 bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed text-zinc-950 font-bold py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-400/40 hover:-translate-y-0.5 text-sm"
+              className="btn-shine w-full flex items-center justify-center gap-2.5 bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed text-zinc-950 font-bold py-3 sm:py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20 hover:-translate-y-0.5 text-sm"
             >
               {status === 'loading' ? (
                 <>
