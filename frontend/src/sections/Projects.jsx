@@ -85,7 +85,7 @@ export default function Projects() {
   const [error,    setError]    = useState(null);
 
   useEffect(() => {
-    fetch('https://waqas-theta.vercel.app/api/projects')
+    fetch('/api/projects')
       .then((r) => { if (!r.ok) throw new Error('Failed to fetch'); return r.json(); })
       .then((d) => { setProjects(d); setLoading(false); })
       .catch((e) => { setError(e.message); setLoading(false); });
@@ -128,7 +128,7 @@ export default function Projects() {
             <p className="text-3xl mb-3">⚠️</p>
             <p className="text-red-400 font-semibold text-sm mb-1">Failed to load</p>
             <p className="text-zinc-600 text-xs">{error}</p>
-            <p className="text-zinc-700 text-xs mt-2">Make sure the backend is running on port 5000.</p>
+            <p className="text-zinc-700 text-xs mt-2">Make sure the remote API is reachable and reload the page.</p>
           </div>
         )}
 
